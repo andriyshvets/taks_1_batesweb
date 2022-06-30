@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import data from "./timezones copy.json";
+import { Header } from "./components/Header";
+console.log(data);
 
-function App() {
+const App = () => {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <Header />
+      <header>
+        <h1>Event Manager</h1>
+        <laber for="timezones">Select Timezone</laber>
+        <select
+          name="timezones"
+          onChange={function(){}}
         >
-          Learn React
-        </a>
+          <option value="">Central European Time</option>
+          {Object.keys(data.timezones).map(item =>(
+            <option key={data.timezones[item].id} value={data.timezones[item].name}>
+              {data.timezones[item].name}</option>
+          ))}
+        </select>
       </header>
+
+      <main>
+        <div>
+        <button>Published</button>
+        <button>Unpublished</button>
+        <button>Add Event</button>
+      </div>
+      </main>      
     </div>
   );
-}
+};
 
 export default App;
