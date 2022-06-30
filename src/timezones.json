@@ -1,4 +1,5 @@
-[
+{
+  "timezones":[
      {
         "id":0,
         "name": "Eastern Time - EDT",
@@ -24,3 +25,4 @@
         "offset": "GMT+0000" 
      }
   ]
+}

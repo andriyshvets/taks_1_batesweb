@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+Your task is to create an event management admin panel. It should have the following capabilities:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Create / Edit / Delete events. (CRUD)
+- The event time should be stored using [UTC (GMT+0000) time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time) in relation to the selected timezone from the dropdown. (e.g. if my time zone in the selector was GMT+0300 and I create an event at 08:00 am, it becomes 05:00 when it is stored into UTC time.)
+- Ability to change the timezone (with the selector) and re-render the list of event (times) in the specified timezone.
+- Ability to publish and unpublish events
+    - When creating an event, it goes into the unpublished list.
+    - The publish and unpublish lists use the same style. The only difference is the menu option to publish / unpublish the event.
+    - User should have the ability to move an unpublished list item into the published list, and move a published item to the unpublished list using the menu.
+    
+    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1aada330-070f-4024-8d01-d8495986ea06/Untitled.png)
+    
 
-## Available Scripts
+## Requirements / Additional Details
 
-In the project directory, you can run:
+- [React](https://reactjs.org) or any React Based Library
+- You can use any utility library you wish to accomplish the tasks in this document. (e.g. converting timezones)
+- You can use any UI Library that you like (Tailwindcss is a plus)
+- Create and Edit forms can be created / styled however you like.
+- Use clear variable naming using full english words.
+- Save all time related data in UTC format (GMT+0000).
+- Display all time related data in the selected timezone. (e.g. If I have an event starting at 11:00 am UTC (GMT+0000) it should be rendered at 2:00 pm if the timezone selector is Eastern European Time… GMT+0300).
+- Follow the design Figma file as close as possible.
 
-### `npm start`
+## Assets
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+| Name | Description |
+| --- | --- |
+| Figma Design Document | Design document to be used for the code challenge. |
+| Icons | Can be exported directly from the Figma Design Document https://help.figma.com/hc/en-us/articles/360040028114-Guide-to-exports-in-Figma |
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Event Data Structure
 
-### `npm test`
+```json
+{
+	"events": [
+			"event": {
+				"id": 0,
+				"title": "Lorem ipsum dolor sit amet",
+				"time": "2022-06-27T07:07:08.350Z",
+				"isPublished": false
+			}
+	]
+}
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Timezone Data
 
-### `npm run build`
+This data should be used in the timezone selector to calculate the times when adding / editing / rendering lists. You can use whatever data you need from this list to accomplish the task (or from another source) **it is important just to get the calculations correct.**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```json
+{
+   "timezones":[
+      {
+         "id":0,
+         "name": "Eastern Time - EDT",
+         "value": "America/New_York",
+				 "offset": "GMT-0400" 
+      },
+      {
+         "id":1,
+         "name":"Eastern European Time",
+         "value":"Europe/Helsinki",
+				 "offset": "GMT+0300" 
+      },
+      {
+         "id":2,
+         "name":"Central Europen Time",
+         "value":"Europe/Berlin",
+				 "offset": "GMT+0200" 
+      },
+      {
+         "id":3,
+         "name": "UTC",
+         "value": "UTC",
+				 "offset": "GMT+0000" 
+      }
+   ]
+}
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Submission
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Upload to your Github account and send the repository URL to
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[challenge@bateswebtech.com](mailto:challenge@bateswebtech.com) at your earliest convenience (preferably within the next 7-10 days).

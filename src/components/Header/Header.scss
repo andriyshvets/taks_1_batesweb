@@ -6,15 +6,20 @@
 .header {
   font-family: 'Montserrat', 'Courier New', Courier, monospace;
   font-style: normal;
+  font-weight: 600;
   font-size: 40px;
   display: flex;
   justify-content: space-between;
-}
+  align-items: center;
 
-.header__title {
-  display: flex;
-}
+  &__title {
+    margin-right: 181px;
+    font-size: 40px;
+    display: flex;
+  }
 
-.header__timezone {
-  display: flex;
+  &__timezone {
+    font-size: 22px;
+    display: flex;
+  }
 }
