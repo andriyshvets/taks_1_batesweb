@@ -8,7 +8,7 @@ export const Header = () => {
     <div className="header">
         <h1 className="header__title">Event Manager</h1>
         <img src={logo} alt="timezone-logo" className="header__logo" />
-        <laber className="header__timezone" for="timezones">Select Timezone</laber>
+        <laber className="header__timezoneLabel" for="timezones">Select Timezone</laber>
         <select
           className="header__timezone"
           name="timezones"

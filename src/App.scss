@@ -1,0 +1,62 @@
+// @font-face {
+//   font-family: 'Montserrat';
+//   src:  url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
+// }
+
+.App {
+  margin: 50px 100px;
+}
+
+.button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__publish {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 500px;
+    height: 70px;
+    background-color: #E9E9E9;
+    border-radius: 45px;
+
+    &-style {
+      width: 230px;
+      height: 46px;
+      font-family: 'Montserrat', 'Courier New', Courier, sans-serif;;
+      font-weight: 600;
+      font-style: normal;
+      font-size: 24px;
+      border-radius: 60px;
+      border: none;
+      background-color: #E9E9E9;
+      cursor: pointer;
+  }
+
+    &-ed {
+      background-color: #4285F4;
+      color: #ffffff;
+    }
+
+    &-un {
+      color: #000000;
+    }
+  }
+
+  &__addevent {
+    width: 230px;
+    height: 70px;
+    font-family: 'Montserrat', 'Courier New', Courier, sans-serif;;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 24px;
+
+    background-color: #4ade80;
+    border: none;
+    border-radius: 56px;
+    cursor: pointer;
+
+    color: #ffffff;
+  }
+}
